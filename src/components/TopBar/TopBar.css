@@ -1,0 +1,130 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none; /* Allow clicking through the empty space */
+}
+
+.top-bar > * {
+  pointer-events: auto; /* Re-enable pointer events for children */
+}
+
+.top-bar .top-bar-nav {
+  /* Middle section stays naturally in flow (flex centered) but we can fix it if needed */
+  /* If we want it strictly fixed independent of the bar, we can keep position:fixed.
+     But if the bar is fixed, this is redundant unless we want to break it out of flex.
+     User wanted it "fixed" (visible). If parent is fixed, it is fixed. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar .top-bar-logo {
+  width: 4rem;
+}
+
+.top-bar .top-bar-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Login Button Customization */
+.top-bar .login-btn .circle {
+  background: var(--base-100) !important;
+}
+
+.top-bar .login-btn .icon {
+  color: black !important;
+}
+
+.top-bar .nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; /* Reduced gap */
+  padding: 0.4rem 0.5rem; /* Reduced padding */
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism transparent bg */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar .nav-link {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem; /* Reduced horizontal padding */
+  border-radius: 2rem;  /* Pill shape */
+  white-space: nowrap;
+  
+  /* Background Fill Effect */
+  /* Left side: Whit'ish (Filled), Right side: Transparent (Unfilled) */
+  /* Using exact 50% with -1px shift to hide the line */
+  background-image: linear-gradient(to right, var(--base-100) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100.5% 0; /* Shift slightly more than 100% to push the edge off-screen initially */
+  
+  /* Remove text clip from here, moved to .nav-text */
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  color: inherit; /* Allow text color to be controlled by child */
+}
+
+.top-bar .nav-text {
+  /* Text Color Fill Effect */
+  /* Left side: Black (Filled bg), Right side: Whit'ish (Unfilled bg) */
+  background-image: linear-gradient(to right, #000000 50%, var(--base-100) 50%);
+  background-size: 200% 100%;
+  background-position: 100.5% 0; /* Match the background shift */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  display: inline-block; /* Ensure transforms/gradients work well */
+}
+
+.top-bar .nav-link:hover {
+  /* Optional: Hover effect */
+}
+
+/* Remove active class styling as GSAP handles it */
+/* .top-bar .nav-link.active { ... } */
+
+@media (max-width: 1000px) {
+  .top-bar {
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .top-bar .nav-pill {
+    gap: 1rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .top-bar .nav-link {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar .top-bar-nav {
+    display: none;
+  }
+  
+  .top-bar .top-bar-cta {
+    gap: 0.5rem;
+  }
+  
+  .top-bar .login-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}

@@ -259,18 +259,33 @@ export default function Home() {
               <Copy animateOnScroll={false} delay={showPreloader ? 10 : 0.85}>
                 
 <h1>
-  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.5rem'}}>
-    {/* Tori  */}
-     Tori 
-    <img src="/images/logo.png" alt="Tori" className="inline-logo" style={{width: '90px', height: '90px', display: 'inline-block', verticalAlign: 'middle', margin: '0 -2px'}} />
-    reduces booking
+  <div className="hero-title-wrapper">
+    <div className="hero-title-row">
+      Tori 
+      <img src="/images/logo.png" alt="Tori" className="inline-logo" style={{width: '70px', height: '70px', display: 'inline-block', verticalAlign: 'middle', margin: '0 -2px'}} />
+      lets
+    </div>
+    <div className="hero-title-row">
+       book Sessions 
+    </div>
   </div>
-  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.5rem'}}>
+  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.3rem'}}>
     <span className="itc-garamond"> 
-      no-shows by upto 65%
+     over "WHATSAPP" in JUST "10 sec"
+     <img 
+        src="/images/bomb10s.png" 
+        alt="Tori" 
+        className="bomb-icon"   
+     />
     </span>
+    
   </div>
+   
 </h1>
+
+<div className="hero-mockup">
+          <img src="/images/phns4.png" alt="Phone mockup" />
+ </div>
 
               </Copy>
             </div>
@@ -280,32 +295,53 @@ export default function Home() {
                   At Terrene, we shape environments that elevate daily life,
                   invite pause, and speak through texture and light.
                 </p> */}
-                <div className="hero-tagline-text">
-                  <p className="hero-copy">
-                    Your clients live on WhatsApp. Why are you forcing them to use clunky forms & check emails they’ll never open? Tori Ate is the 20-sec WhatsApp booking engine that <span className="hero-copy-highlight">captures the clients your competitors are losing.</span>
-                  </p>
-                </div>
+        
+        
+        
+        <div className="hero-tagline-text">
+  <p className="hero-copy" style={{ lineHeight: '1.5' }}>
+    Your clients live on  
+    <img 
+      src="/images/whatsapp logo.png" 
+      alt="WhatsApp" 
+      style={{ width: '28px', height: 'auto', verticalAlign: 'middle', margin: '0 4px' }} 
+    />
+    WhatsApp! Why are you forcing them to use clunky forms 📝 & check  
+    <img 
+      src="/images/gmail logo.png" 
+      alt="Gmail" 
+      style={{ width: '24px', height: 'auto', verticalAlign: 'middle', margin: '0 4px' }} 
+    />
+    mail they’ll never open? Tori is THE 10-SEC 
+    <img 
+      src="/images/whatsapp logo.png" 
+      alt="WhatsApp" 
+      style={{ width: '28px', height: 'auto', verticalAlign: 'middle', margin: '0 4px' }} 
+    />
+    booking engine that <span className="hero-copy-highlight">"CAPTURES the CLIENTS" YOUR "COMPETITORS are LOSING"</span>
+  </p>
+</div>
               </Copy>
             </div>
-            <AnimatedButton
-              label="Get Started"
-              route="/studio"
-              animateOnScroll={false}
-              delay={showPreloader ? 10.3 : 1.15}
-            />
+            <div className="hero-cta">
+              <AnimatedButton
+                label="Get Started"
+                route="/studio"
+                animateOnScroll={false}
+                delay={showPreloader ? 10.3 : 1.15}
+              />
+            </div>
           </div>
         </div>
         
-        <div className="hero-mockup">
-          <img src="/images/hand-mockup.png" alt="Phone mockup" />
-        </div>
+        
         
           <div className="hero-stats">
           <div className="container">
             <div className="stat">
               <div className="stat-count">
                 <Copy delay={0.1} animateOnScroll={false}>
-                  <h2 style={{fontSize: '7rem'}}>20 Sec</h2>
+                  <h2 style={{fontSize: '7rem'}}>10 Sec</h2>
                 </Copy>
               </div>
               {/* <div className="stat-divider"></div> */}

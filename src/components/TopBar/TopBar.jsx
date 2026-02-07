@@ -160,8 +160,9 @@ const TopBar = () => {
       </div>
       
       <div className="top-bar-cta" ref={ctaRef}>
+        <span className="mobile-founder-text">Founded by Engineers from BITS Pilani & (Ex-Amazon) NIT Jaipur</span>
         <AnimatedButton2 label="Login" route="/connect" animate={false} bgColor="orange" className="login-btn" />
-        <AnimatedButton label="Get Started" route="/connect" animate={false} />
+        <AnimatedButton label="Get Started" route="/connect" animate={false} className="get-started-btn" />
       </div>
     </div>
   );

@@ -41,6 +41,8 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
       const initializeSplitText = async () => {
         await waitForFonts();
 
+        if (!containerRef.current) return;
+
         splitRefs.current = [];
         lines.current = [];
         elementRefs.current = [];
@@ -115,11 +117,11 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
   );
 
   if (React.Children.count(children) === 1) {
-    return React.cloneElement(children, { ref: containerRef });
+    return React.cloneElement(children, { ref: containerRef, suppressHydrationWarning: true });
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div ref={containerRef} data-copy-wrapper="true" suppressHydrationWarning>
       {children}
     </div>
   );

@@ -262,7 +262,7 @@ body.menu-open .menu-toggle {
 
 .hero .hero-content {
   position: absolute;
-  top: 40svh; /* Moved further downwards */
+  top: 37svh; /* Moved further downwards */
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--base-100);
@@ -299,13 +299,13 @@ body.menu-open .menu-toggle {
 
 @media (max-width: 768px) {
   .hero .hero-status-pill {
-    position: absolute;
-    top: -8rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    position: relative; /* Changed from absolute to relative to prevent clipping */
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 0 auto 1rem auto; /* Center and add bottom spacing */
     width: fit-content;
-    margin-bottom: 0;
+    transform: none; /* Reset transform to avoid conflict with animation */
   }
 }
 
@@ -567,16 +567,29 @@ body.menu-open .menu-toggle {
 /* IMP-----IMP------main hero section starting from Tori */
 @media (max-width: 480px) {
   .hero {
-    height: 220svh;
+    height: auto !important; /* Allow height to grow with content */
+    min-height: 100svh;
+    padding-bottom: 2rem;
   }
   .hero .hero-content {
-    top: 45svh;
+    position: relative !important; /* Flow naturally */
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto;
+    padding-top: 15svh; /* Keep top spacing */
+    padding-bottom: 0;
+  }
+  .hero .hero-stats {
+    position: relative !important; /* Flow after content */
+    bottom: auto !important;
+    margin-top: 2rem; /* Reasonable gap between tagline and stats */
   }
 }
 
 .bomb-icon {
   /* Defines the size */
-  width: 120px; 
+  width: 90px; 
   height: auto;
   
   /* Keeps it aligned with text */
@@ -600,15 +613,60 @@ body.menu-open .menu-toggle {
 }
 
 /* Mobile Layout Restructuring */
+.hero-mobile-group {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .hero-mobile-group {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    position: relative;
+    z-index: 20; /* Ensure visibility */
+  }
+
+  .hero-mobile-logo {
+    width: 3.5rem;
+    height: auto;
+  }
+
+  /* Override button margin in group */
+  .hero-mobile-group .btn {
+    margin: 0;
+  }
+
+  .hero-cta {
+    display: none !important; /* Hide original CTA on mobile */
+  }
+
+  .hero .hero-status-pill {
+    position: absolute;
+    top: -1rem; /* Adjusted to be visible and close to text */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 0;
+  }
+
   .hero .hero-content {
     display: flex;
     flex-direction: column;
-    /* Disable vertical centering to prevent top overlap */
-    top: 15svh !important;
-    transform: translateX(-50%) !important;
+    /* Use relative flow layout to prevent alignment issues */
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto;
+    padding-top: 10svh; /* Reduced from 15svh to move content upwards */
     height: auto;
     padding-bottom: 2rem;
+    width: 90%; /* Slightly wider on mobile for better fit */
+    z-index: 10; /* Ensure content is above background/gradient */
   }
   
   .hero-header {
@@ -622,11 +680,19 @@ body.menu-open .menu-toggle {
     width: 100%;
     display: flex;
     justify-content: center;
+    /* Reset absolute positioning to enforce flex order */
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
   }
   
   .hero-tagline {
     order: 3;
-    margin-top: 1rem;
+    margin-top: 1rem; /* Increased from 1rem to prevent overlap */
+    padding: 0 1rem; /* Added padding for better readability */
   }
 
   .hero .hero-mockup {
@@ -635,7 +701,7 @@ body.menu-open .menu-toggle {
     left: auto !important;
     bottom: auto !important;
     transform: none !important;
-    margin: 2rem auto 0 auto !important;
+    margin: -2rem auto 0 auto !important;
     width: 80% !important;
     max-width: 300px;
     height: auto !important;

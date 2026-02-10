@@ -149,9 +149,6 @@ const TextAnimation = () => {
             Tori is 'YOUR 24/7 RECEPTIONIST'—an AI WHATSAPP SESSION BOOKING &
              front-desk AUTOMATION platform that replaces Clunky Forms with an Instant 
              Chat Experience, allowing businesses to lock in Bookings in 10 seconds flat.
-
-
-\
           </p>
           {/* <p>
             We believe great design starts with clarity and expression ends.

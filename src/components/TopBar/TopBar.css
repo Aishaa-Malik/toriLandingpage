@@ -40,6 +40,13 @@
 }
 
 /* Get Started Button Specific Override */
+@media (max-width: 768px) {
+  .top-bar-logo,
+  .top-bar-cta {
+    display: none !important;
+  }
+}
+
 .top-bar .get-started-btn {
   background: rgba(255, 255, 255, 0.25) !important;
   border: 1px solid rgba(255, 255, 255, 0.5) !important;

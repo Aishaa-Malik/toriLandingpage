@@ -13,14 +13,6 @@ const ProcessAnimation = () => {
   useGSAP(() => { 
     gsap.registerPlugin(ScrollTrigger); 
 
-    // 1. Initialize Lenis (Exact configuration) 
-    const lenis = new Lenis(); 
-    lenis.on("scroll", ScrollTrigger.update); 
-    gsap.ticker.add((time) => { 
-      lenis.raf(time * 1000); 
-    }); 
-    gsap.ticker.lagSmoothing(0); 
-
     // 2. Constants & Processing 
     const wordHighlightBgColor = "60, 60, 60"; 
     const keywords = [
@@ -126,10 +118,9 @@ const ProcessAnimation = () => {
       <div className="process-copy-wrapper"> 
         <div className="process-text-content" ref={textRef}> 
           <p> 
-Tori is 'YOUR 24/7 RECEPTIONIST'—an AI WHATSAPP SESSION BOOKING &
+             Tori is 'YOUR 24/7 RECEPTIONIST'—an AI WHATSAPP SESSION BOOKING &
              front-desk AUTOMATION platform that replaces Clunky Forms with an Instant 
              Chat Experience, allowing businesses to lock in Bookings in 10 seconds flat.
-
           </p> 
           {/* <p> 
             We believe great design starts with clarity and expression ends. 

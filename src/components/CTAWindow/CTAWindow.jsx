@@ -48,11 +48,6 @@ const CTAWindow = ({
               <AnimatedBodyText>{subtitle}</AnimatedBodyText>
             </div>
           </Copy>
-          <Copy delay={0.2}>
-            <div className="cta-helper">
-              <AnimatedBodyText>{helperText}</AnimatedBodyText>
-            </div>
-          </Copy>
           <Copy delay={0.25}>
             <div className="cta-btn-wrapper">
               <AnimatedButton
@@ -60,6 +55,11 @@ const CTAWindow = ({
                 route={buttonRoute}
                 animateOnScroll={false}
               />
+            </div>
+          </Copy>
+          <Copy delay={0.2}>
+            <div className="cta-helper">
+              <AnimatedBodyText>{helperText}</AnimatedBodyText>
             </div>
           </Copy>
         </div>

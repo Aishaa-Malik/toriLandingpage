@@ -57,6 +57,8 @@ const AnimatedButton = ({
       const initializeAnimation = async () => {
         await waitForFonts();
 
+        if (!buttonRef.current || !circleRef.current || !iconRef.current || !textRef.current) return;
+
         const split = SplitText.create(textRef.current, {
           type: "lines",
           mask: "lines",
@@ -166,7 +168,7 @@ const AnimatedButton = ({
   }
 
   return (
-    <button className={`btn ${className}`} ref={buttonRef}>
+    <button className={`btn ${className}`} ref={buttonRef} suppressHydrationWarning>
       {buttonContent}
     </button>
   );

@@ -118,7 +118,7 @@ const HowWeWork = () => {
             </div>
             <Copy delay={0.15}>
               <h3>
-                From "Hi" to "Booked" in 20 seconds flat.
+                From "Hi" to "Booked" in 10 seconds ONLY.
               </h3>
               <h4 className="subheading">
                 Forget clunky apps and endless forms. Let your customers book appointments, choose slots, and pay directly inside WhatsApp. It’s natural, instant, and 10x faster than your competitors.

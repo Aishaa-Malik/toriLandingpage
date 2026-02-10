@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -202,7 +203,7 @@ const AnimatedBodyText = ({ children, className = "", style = {}, start = "top 9
   }, [children]);
 
   return (
-    <div className={`abt-container ${className}`} ref={containerRef} style={style}>
+    <div className={`abt-container ${className}`} ref={containerRef} style={style} suppressHydrationWarning>
       {/* Content injected by JS */}
       <span style={{opacity: 0}}>{children}</span> 
       {/* We keep children hidden initially or just replace content */}

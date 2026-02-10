@@ -259,17 +259,17 @@ export default function Home() {
               <Copy animateOnScroll={false} delay={showPreloader ? 10 : 0.85}>
                 
 <h1>
-  <div className="hero-title-wrapper">
-    <div className="hero-title-row">
-      Tori 
+  <span className="hero-title-wrapper">
+    <span className="hero-title-row">
+      Tori
       <img src="/images/logo.png" alt="Tori" className="inline-logo" style={{width: '70px', height: '70px', display: 'inline-block', verticalAlign: 'middle', margin: '0 -2px'}} />
       lets
-    </div>
-    <div className="hero-title-row">
+    </span>
+    <span className="hero-title-row">
        book Sessions 
-    </div>
-  </div>
-  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.3rem'}}>
+    </span>
+  </span>
+  <span style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.3rem'}}>
     <span className="itc-garamond"> 
      over "WHATSAPP" in JUST "10 sec"
      <img 
@@ -279,9 +279,19 @@ export default function Home() {
      />
     </span>
     
-  </div>
+  </span>
    
 </h1>
+
+<div className="hero-mobile-group">
+  <img src="/images/logo.png" alt="Tori" className="hero-mobile-logo" />
+  <AnimatedButton
+    label="Get Started"
+    route="/studio"
+    animateOnScroll={false}
+    delay={showPreloader ? 10.3 : 1.15}
+  />
+</div>
 
 <div className="hero-mockup">
           <img src="/images/phns4.png" alt="Phone mockup" />
